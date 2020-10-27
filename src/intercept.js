@@ -19,7 +19,7 @@ module.exports = targets => {
       name: 'AccountInformation',
       pattern: '/account-information',
       path: require.resolve(
-        '@marcinkwiatkowski/customer-menu/src/components/AccountInformation'
+        '@marcinkwiatkowski/customer-menu/src/components/AccountInformation/'
       )
     });
     return routes;

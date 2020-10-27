@@ -1,8 +1,11 @@
 import React from 'react';
 import { useAccountInformation } from './useAccountInformation';
 import { Redirect } from '@magento/venia-drivers';
+import { mergeClasses } from '@magento/venia-ui/lib/classify';
+import defaultClasses from './accountInformation.css';
 
-const AccountInformation = () => {
+const AccountInformation = props => {
+  const classes = mergeClasses(defaultClasses, props.classes);
   const { currentUser, isSignedIn } = useAccountInformation();
 
   if (!isSignedIn) {
@@ -10,10 +13,10 @@ const AccountInformation = () => {
   }
 
   return (
-    <div>
-      <h1>Account information</h1>
+    <div className={classes.root}>
+      <h1 className={classes.title}>Account information</h1>
 
-      <ul>
+      <ul className={classes.list}>
         <li>
           <strong>First name: </strong>
           <span>{currentUser.firstname}</span>
