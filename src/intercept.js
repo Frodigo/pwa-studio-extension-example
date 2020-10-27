@@ -13,4 +13,15 @@ module.exports = targets => {
      */
     flags[targets.name] = { esModules: true, cssModules: true };
   });
+
+  targets.of('@magento/venia-ui').routes.tap(routes => {
+    routes.push({
+      name: 'AccountInformation',
+      pattern: '/account-information',
+      path: require.resolve(
+        '@marcinkwiatkowski/customer-menu/src/components/AccountInformation'
+      )
+    });
+    return routes;
+  });
 };
