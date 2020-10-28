@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAccountInformation } from '../../talons/AccountInformation/useAccountInformation';
-import { Redirect } from '@magento/venia-drivers';
+import { Redirect } from '@magento/venia-ui/lib/drivers';
 import { mergeClasses } from '@magento/venia-ui/lib/classify';
 import defaultClasses from './accountInformation.css';
 
