@@ -8,52 +8,52 @@ import { useCallback } from 'react';
  * @returns {Function}  result.handleSignOut - The function to handle sign out actions.
  */
 export const useAccountMenuItems = props => {
-  const { onSignOut } = props;
+    const { onSignOut } = props;
 
-  const handleSignOut = useCallback(() => {
-    onSignOut();
-  }, [onSignOut]);
+    const handleSignOut = useCallback(() => {
+        onSignOut();
+    }, [onSignOut]);
 
-  const MENU_ITEMS = [
-    // {
-    //     name: 'Order History',
-    //     id: 'accountMenu.orderHistoryLink',
-    //     url: '/order-history'
-    // },
-    // {
-    //     name: 'Store Credit & Gift Cards',
-    //     id: 'accountMenu.storeCreditLink',
-    //     url: ''
-    // },
-    // {
-    //     name: 'Favorites Lists',
-    //     id: 'accountMenu.favoritesListsLink',
-    //     url: '/wishlist'
-    // },
-    // {
-    //     name: 'Address Book',
-    //     id: 'accountMenu.addressBookLink',
-    //     url: '/address-book'
-    // },
-    // {
-    //     name: 'Saved Payments',
-    //     id: 'accountMenu.savedPaymentsLink',
-    //     url: ''
-    // },
-    {
-      name: 'Communications',
-      id: 'accountMenu.communicationsLink',
-      url: '/communications'
-    },
-    {
-      name: 'Account Information',
-      id: 'accountMenu.accountInfoLink',
-      url: '/account-information'
-    }
-  ];
+    const MENU_ITEMS = [
+        // {
+        //     name: 'Order History',
+        //     id: 'accountMenu.orderHistoryLink',
+        //     url: '/order-history'
+        // },
+        // {
+        //     name: 'Store Credit & Gift Cards',
+        //     id: 'accountMenu.storeCreditLink',
+        //     url: ''
+        // },
+        // {
+        //     name: 'Favorites Lists',
+        //     id: 'accountMenu.favoritesListsLink',
+        //     url: '/wishlist'
+        // },
+        // {
+        //     name: 'Address Book',
+        //     id: 'accountMenu.addressBookLink',
+        //     url: '/address-book'
+        // },
+        // {
+        //     name: 'Saved Payments',
+        //     id: 'accountMenu.savedPaymentsLink',
+        //     url: ''
+        // },
+        {
+            name: 'Communications',
+            id: 'accountMenu.communicationsLink',
+            url: '/communications'
+        },
+        {
+            name: 'Account Information',
+            id: 'accountMenu.accountInfoLink',
+            url: '/account-information'
+        }
+    ];
 
-  return {
-    handleSignOut,
-    menuItems: MENU_ITEMS
-  };
+    return {
+        handleSignOut,
+        menuItems: MENU_ITEMS
+    };
 };

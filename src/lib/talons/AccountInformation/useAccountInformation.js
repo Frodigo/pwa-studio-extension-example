@@ -5,10 +5,10 @@ import { useUserContext } from '@magento/peregrine/lib/context/user';
  * @returns {{currentUser: {id, email, firstname, lastname, is_subscribed}, isSignedIn: boolean}}
  */
 export const useAccountInformation = () => {
-  const [{ currentUser, isSignedIn }] = useUserContext();
+    const [{ currentUser, isSignedIn }] = useUserContext();
 
-  return {
-    currentUser,
-    isSignedIn
-  };
+    return {
+        currentUser,
+        isSignedIn
+    };
 };
