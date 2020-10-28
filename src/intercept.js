@@ -1,3 +1,6 @@
+const componentOverrideMapping = require('./componentOverrideMapping');
+const moduleOverridePlugin = require('./moduleOverrideWebpackPlugin');
+
 /**
  * Custom intercept file for the extension
  * By default you can only use target of @magento/pwa-buildpack.
@@ -19,9 +22,13 @@ module.exports = targets => {
       name: 'AccountInformation',
       pattern: '/account-information',
       path: require.resolve(
-        '@marcinkwiatkowski/customer-menu/src/components/AccountInformation/'
+        '@marcinkwiatkowski/customer-menu/src/lib/components/AccountInformation/'
       )
     });
     return routes;
+  });
+
+  targets.of('@magento/pwa-buildpack').webpackCompiler.tap(compiler => {
+    new moduleOverridePlugin(componentOverrideMapping).apply(compiler);
   });
 };
